@@ -1,0 +1,24 @@
+import java.sql.*;
+
+
+public class JDBC_test {
+
+	public static void main(String[] args) throws SQLException {
+		
+		Connection myConn= null;
+		Statement myStat=null;
+		ResultSet myRe=null;
+		
+		try {
+			//1. Get a connection to a database
+			myConn= DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "75178_user", "75178_user");
+			System.out.println("Database connection successful! \n");
+			
+			
+		}catch{
+			
+		}
+		
+	}
+
+}

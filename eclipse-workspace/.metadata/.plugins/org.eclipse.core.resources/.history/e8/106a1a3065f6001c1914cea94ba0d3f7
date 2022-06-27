@@ -1,0 +1,40 @@
+import java.sql.*;
+
+public class MyTableUsingJava {
+
+	public static void main (String[] args) throws Exception{
+		getConnection();
+
+	}
+	
+	/*public static void createTable() throws Exception {
+		try {
+			Connection myConn = getConnection();
+		}
+		
+		catch (Exception e) {
+			System.out.println(e);
+		}
+	}*/
+	
+	private static Connection getConnection() throws Exception {
+		try {
+			
+			String driver = "com.mysql.jdbc.Driver";
+			String url = "jdbc:mysql://localhost:3306/datasheet1";
+			String userName= "75178_user";
+			String password="75178_user";
+			Class.forName(driver);
+			
+			Connection myConn = DriverManager.getConnection(url, userName, password);
+			System.out.println("Connected successfuly");
+			return myConn;
+		}catch (Exception e) {
+			System.out.println(e);
+		}
+			
+		return null;
+	
+	}
+
+}

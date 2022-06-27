@@ -1,0 +1,18 @@
+import java.sql.DriverManager;
+
+public class JDBC_test {
+
+	public static void main(String[] args) throws SQLException {
+		
+		Connection myConn= null;
+		Statement myStat=null;
+		ResultSet myRe=null;
+		
+		try {
+			//1. Get a connection to a database
+			myConn= DriverManager.getConnection(arg0)
+		}
+		
+	}
+
+}
