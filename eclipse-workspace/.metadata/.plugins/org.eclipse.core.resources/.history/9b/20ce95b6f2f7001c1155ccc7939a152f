@@ -1,0 +1,41 @@
+package excercisesHdtTraining;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class PersonalInformation {
+	
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\1000075178\\Documents\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+	//Filling in the section: "Personal information"
+		driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation");
+
+		WebElement radio = driver.findElement(By.cssSelector("div[id='uniform-id_gender2'] span"));
+		radio.click();
+		System.out.println(driver.findElement(By.id("uniform-id_gender2")).getText());
+		
+		
+		
+		driver.findElement(By.id("customer_firstname")).sendKeys("Mariana");
+		driver.findElement(By.id("customer_lastnamee")).sendKeys("Vives");
+		driver.findElement(By.id("email")).sendKeys("marianavives123@gmail.com");
+		driver.findElement(By.id("passwd")).sendKeys("mariana123");
+		driver.findElement(By.id("days")).click();
+
+		
+		//Select dropdown items
+		WebElement dropdownDays = driver.findElement(By.id("days")) ;
+		Select dropdown = new Select(dropdownDays);
+		dropdown.selectByIndex(9);
+		dropdown.getFirstSelectedOption();
+		System.out.println(dropdown.getFirstSelectedOption().getText());
+
+		WebElement dropdownDays = driver.findElement(By.id("months"));
+		Select dropdown = new Select(dropdownDays);
+		dropdown.getFirstSelectedOption();
+		System.out.println(dropdown.getFirstSelectedOption().getText());
+}
